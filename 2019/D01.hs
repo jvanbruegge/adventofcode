@@ -14,14 +14,12 @@ solve :: String -> Maybe Int
 solve = pure . sum . fmap fuel <=< readModules
 
 solve2 :: String -> Maybe Int
-solve2 = pure . sum . fmap (sum . takeWhile (>0) . iterate fuel . fuel) <=< readModules
+solve2 = pure . sum . fmap (sum . takeWhile (> 0) . iterate fuel . fuel) <=< readModules
 
 main :: IO ()
 main = do
-    input <- readFile "D01.txt"
-
-    putStr "Part 1: "
-    print $ fromJust $ solve input
-
-    putStr "Part 2: "
-    print $ fromJust $ solve2 input
+  input <- readFile "D01.txt"
+  putStr "Part 1: "
+  print $ fromJust $ solve input
+  putStr "Part 2: "
+  print $ fromJust $ solve2 input
