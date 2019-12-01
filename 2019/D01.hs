@@ -4,22 +4,17 @@ import Control.Monad ((<=<))
 import Data.Maybe (fromJust)
 import Text.Read (readMaybe)
 
-calcModuleMass :: Int -> Int
-calcModuleMass = subtract 2 . (`div` 3)
+fuel :: Int -> Int
+fuel = subtract 2 . (`div` 3)
 
 readModules :: String -> Maybe [Int]
 readModules = traverse readMaybe . lines
 
 solve :: String -> Maybe Int
-solve = pure . sum . fmap calcModuleMass <=< readModules
+solve = pure . sum . fmap fuel <=< readModules
 
 solve2 :: String -> Maybe Int
-solve2 = pure . sum . fmap (calcAdditionalFuel 0 . calcModuleMass) <=< readModules
-    where calcAdditionalFuel :: Int -> Int -> Int
-          calcAdditionalFuel n x = let fuel = x `div` 3 - 2
-              in if fuel <= 0
-                 then n + x
-                 else calcAdditionalFuel (n + x) fuel
+solve2 = pure . sum . fmap (sum . takeWhile (>0) . iterate fuel . fuel) <=< readModules
 
 main :: IO ()
 main = do
