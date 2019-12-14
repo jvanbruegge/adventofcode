@@ -16,6 +16,7 @@ dependencies:
   - vector
   - text
   - mtl
+  - containers
 
 executables:
   adventofcode:
