@@ -1,24 +1,25 @@
-name:                adventofcode
-version:             0.1.0.0
+name: adventofcode
+version: 0.1.0.0
 #synopsis:
 #description:
-homepage:            https://github.com/jvanbruegge/adventofcode#readme
-license:             MIT
-author:              Jan van Brügge
-maintainer:          jan@vanbruegge.de
-copyright:           2019 Jan van Brügge
-category:            Web
+homepage: https://github.com/jvanbruegge/adventofcode#readme
+license: MIT
+author: Jan van Brügge
+maintainer: jan@vanbruegge.de
+copyright: 2019 Jan van Brügge
+category: Web
 extra-source-files:
-- README.md
+    - README.md
 
 dependencies:
-  - base >= 4.7 && < 5
-  - vector
-  - text
-  - mtl
-  - containers
+    - base >= 4.7 && < 5
+    - vector
+    - text
+    - mtl
+    - containers
+    - regex-tdfa
 
 executables:
-  adventofcode:
-    source-dirs:      ['2020', '2019']
-    main:             Main.hs
+    adventofcode:
+        source-dirs: ["2020", "2019"]
+        main: Main.hs
