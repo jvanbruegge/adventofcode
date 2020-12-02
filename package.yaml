@@ -20,5 +20,5 @@ dependencies:
 
 executables:
   adventofcode:
-    source-dirs:      src
+    source-dirs:      ['2020', '2019']
     main:             Main.hs
