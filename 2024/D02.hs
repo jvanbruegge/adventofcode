@@ -26,6 +26,6 @@ solution2 = count (any safe . drop1s)
 
 main :: IO ()
 main = do
-  input <- readInput <$> readFile "./D02.txt"
+  input <- readInput <$> readFile "2024/D02.txt"
   print $ solution1 input
   print $ solution2 input
